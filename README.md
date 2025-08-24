@@ -54,8 +54,8 @@ But if you’re also solving Striver’s Sheet, feel free to:
 ---
 
 ## ✨ Let’s Connect  
-- [LinkedIn](https://www.linkedin.com/in/yourprofile)  
-- [GitHub](https://github.com/yourusername)  
+- [LinkedIn](https://www.linkedin.com/in/aniket-adhav-057b16264)  
+- [GitHub](https://github.com/Anix12)  
 
 ---
 
