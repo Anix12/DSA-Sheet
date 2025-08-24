@@ -20,13 +20,13 @@ From **24th August 2025**, I’ve started solving **2 problems daily** from the 
 
 ---
 
-## 📂 Repository Structure  
-📦 Striver-DSA-Sheet
- ┣ 📂 src
- ┃ ┗ 📂 Arrays
- ┃ ┗ 📂 String
- ┗ 📜 README.md
-
+## 📂 Repository Structure    
+📦 Striver-DSA-Sheet  
+ ┣ 📂 src  
+ ┃ ┗ 📂 Arrays  
+ ┃ ┗ 📂 String  
+ ┗ 📜 README.md  
+  
 Each folder contains problem solutions based on the sheet’s topic.
 
 ---
