@@ -1,31 +1,62 @@
 package Arrays;
 
 public class zeroMatrix {
-//Brute-Force Approch
-  public static void setRowAndColmZero(int arr[][], int i, int j){
-      for(int col=0; col<arr.length; col++){
-          if(arr[i][col]!=0){
-              arr[i][col]=-1;
-          }
-      }
-      for(int row=0; row<arr[0].length; row++){
-          if(arr[row][j]!=0){
-              arr[row][j]=-1;
-          }
-      }
-  }
-    public static void setMatrixZero(int arr[][]){
-        for(int i=0; i<arr.length; i++){
-            for(int j=0; j<arr[0].length; j++){
-                if(arr[i][j]==0){
+    //Brute-Force Approch
+    public static void setRowAndColmZero(int arr[][], int i, int j) {
+        for (int col = 0; col < arr.length; col++) {
+            if (arr[i][col] != 0) {
+                arr[i][col] = -1;
+            }
+        }
+        for (int row = 0; row < arr[0].length; row++) {
+            if (arr[row][j] != 0) {
+                arr[row][j] = -1;
+            }
+        }
+    }
+
+    public static void setMatrixZero(int arr[][]) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] == 0) {
                     setRowAndColmZero(arr, i, j);
                 }
             }
         }
-        for(int i=0; i<arr.length; i++){
-            for(int j=0; j<arr[0].length; j++){
-                if(arr[i][j]==-1){
-                    arr[i][j]=0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] == -1) {
+                    arr[i][j] = 0;
+                }
+            }
+        }
+    }
+
+    //Better Solution
+    public static void betterSolMatrixZero(int arr[][]) {
+        int m = arr.length, n = arr[0].length;
+        int row[] = new int[m];
+        int colm[] = new int[n];
+        for (int i = 0; i < m; i++) {
+            row[i] = 1;
+        }
+        for (int j = 0; j < n; j++) {
+            colm[j] = 1;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] == 0) {
+                    row[i] = 0;
+                    colm[j] = 0;
+                }
+            }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (row[i] == 0 || colm[j] == 0) {
+                    arr[i][j] = 0;
                 }
             }
         }
@@ -34,14 +65,14 @@ public class zeroMatrix {
 
     public static void main(String[] args) {
         int[][] arr = {
-                {0, 1, 1},
+                {1, 1, 1},
                 {1, 0, 1},
                 {1, 1, 1}
         };
-        setMatrixZero(arr);
-        for(int i=0; i<arr.length; i++){
-            for(int j=0; j<arr[0].length; j++){
-                System.out.print(arr[i][j]+" ");
+        betterSolMatrixZero(arr);
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
             }
             System.out.println();
         }
