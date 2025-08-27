@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class sortArray {
     //Brute-Force Approch
     public static void sortedArray(int arr[]) {
@@ -15,6 +17,11 @@ public class sortArray {
         }
     }
 
+    public static int[] seqSortArray(int arr[]) {
+        Arrays.sort(arr);
+        return arr;
+    }
+
     public static void printArray(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -22,8 +29,8 @@ public class sortArray {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 0, 1, 0, 2, 2};
-        sortedArray(arr);
+        int arr[] = {1, 0, 3, 0, 2, 2};
+        seqSortArray(arr);
         printArray(arr);
     }
 }
