@@ -15,10 +15,20 @@ public class StockBuySell {
     }
 
     //Optimiza Approch
-
+    public static int BuySellStockPrice(int price[]) {
+        int maxProfit = 0;
+        int buyPrice = price[0];
+        for (int i = 1; i < price.length; i++) {
+            if (buyPrice < price[i]) {
+                maxProfit = Math.max(maxProfit, price[i] - buyPrice);
+            }
+            buyPrice = Math.min(buyPrice, price[i]);
+        }
+        return maxProfit;
+    }
 
     public static void main(String[] args) {
-        int arr[] = {7, 1, 5, 3, 6, 4};
-        System.out.println(stockPrice(arr));
+        int arr[] = {7, 6, 4, 3, 1};
+        System.out.println(BuySellStockPrice(arr));
     }
 }
