@@ -34,6 +34,11 @@ public class Permutation {
 
     public static void nextPermutation(int arr[], int n) {
         int privot = findPrivot(arr, n);
+
+        if (privot == -1) {
+            reverseArray(arr, 0, n - 1);
+            return;
+        }
         for (int i = n - 1; i > privot; i--) {
             if (arr[i] > arr[privot]) {
                 swap(arr, i, privot);
@@ -45,7 +50,7 @@ public class Permutation {
 
 
     public static void main(String[] args) {
-        int arr[] = {1, 3, 2};
+        int arr[] = {3, 2, 1};
         int n = arr.length;
         nextPermutation(arr, n);
         for (int i = 0; i < arr.length; i++) {
