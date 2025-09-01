@@ -4,7 +4,31 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class repeatMissingNum {
-    //Brute Force Approch with TC-O(n) & SC-O(n)
+
+    //Brute Force
+    public static int[] findMissAndRepeatNum(int arr[]){
+        int repeatNum=0;
+        int missingNum=0;
+        for(int i=1; i<=arr.length; i++){
+            int count=0;
+            for(int j=0; j<arr.length; j++){
+                if(i==arr[j]){
+                    count++;
+                }
+                if(count>=2){
+                    repeatNum=i;
+                }
+            }
+            if(count<=0){
+                missingNum=i;
+            }
+        }
+        return new int[]{repeatNum, missingNum};
+    }
+
+
+
+    //Optimal Approch with TC-O(n) & SC-O(n)
     public static int[] findMissingAndRepeatNum(int arr[]) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int repeat = -1;
@@ -26,6 +50,6 @@ public class repeatMissingNum {
 
     public static void main(String[] args) {
         int arr[] = {3, 1, 2, 5, 4, 6, 7, 5};
-        System.out.println(Arrays.toString(findMissingAndRepeatNum(arr)));
+        System.out.println(Arrays.toString(findMissAndRepeatNum(arr)));
     }
 }
