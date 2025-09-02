@@ -2,10 +2,10 @@ package Arrays;
 
 import java.util.HashMap;
 
-public class Duplicate {
+public class DuplicateEle {
 
     //Brute Force Approch
-    public static int DuplicateEle(int arr[]) {
+    public static int DuplicateElement(int arr[]) {
         for (int i = 1; i < arr.length; i++) {
             int count = 0;
             for (int j = 0; j < arr.length; j++) {
