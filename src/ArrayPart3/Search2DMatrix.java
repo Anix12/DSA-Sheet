@@ -12,15 +12,29 @@ public class Search2DMatrix {
         }
         return false;
     }
+    //optimal Solution Tc-O(n)
+    public static boolean search2DMat(int arr[][], int target){
+        int row=0, colm=arr[0].length-1;
+        while (row<=arr.length && colm>=0){
+            if(target==arr[row][colm]){
+                return true;
+            } else if (target>arr[row][colm]) {
+                row++;
+            }else{
+                colm--;
+            }
+        }
+        return false;
+    }
 
 
     public static void main(String[] args) {
         int matrix[][]={
                 {1 ,2 ,3 ,4},
-                {5 ,6 ,7 ,18},
+                {5 ,6 ,7 ,8},
                 {9 ,10 ,11 ,12}
         };
         int target=8;
-        System.out.println(matrixSearch(matrix, target));
+        System.out.println(search2DMat(matrix, target));
     }
 }
