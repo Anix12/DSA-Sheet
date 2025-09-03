@@ -22,20 +22,34 @@ public class RotateMatrix {
 
     //Optimal Approch
     public static void rotateMat(int arr[][]) {
-        for (int i = 0; i < arr.length-1; i++) {
-            for (int j = i+1; j < arr[0].length; j++) {
-                if (i != j) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr[0].length; j++) {
                     swap(arr, i, j);
-                }
+            }
+        }
+        reverseArray(arr);
+    }
+
+    public static void reverseArray(int arr[][]) {
+        for (int i = 0; i < arr.length; i++) {
+            int lp = 0;
+            int rp = arr[0].length-1;
+            while (lp < rp) {
+                //swap
+                int temp = arr[i][lp];
+                arr[i][lp] = arr[i][rp];
+                arr[i][rp] = temp;
+                lp++;
+                rp--;
             }
         }
     }
 
-    public static void swap(int arr[][], int i, int j){
+    public static void swap(int arr[][], int i, int j) {
         //swapping Function
-        int temp=arr[i][j];
-        arr[i][j]=arr[j][i];
-        arr[j][i]=temp;
+        int temp = arr[i][j];
+        arr[i][j] = arr[j][i];
+        arr[j][i] = temp;
     }
 
     //print Array
@@ -51,9 +65,7 @@ public class RotateMatrix {
 
     public static void main(String[] args) {
         int arr[][] = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+                {1, 2, 3}, {4, 5, 6}, {7, 8, 9}
         };
         rotateMat(arr);
         printArray(arr);
