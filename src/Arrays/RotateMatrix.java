@@ -24,6 +24,7 @@ public class RotateMatrix {
     public static void rotateMat(int arr[][]) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = i + 1; j < arr[0].length; j++) {
+
                     swap(arr, i, j);
             }
         }
