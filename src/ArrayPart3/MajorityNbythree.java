@@ -2,6 +2,7 @@ package ArrayPart3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class MajorityNbythree {
 
@@ -12,8 +13,10 @@ public class MajorityNbythree {
         ArrayList<Integer> list =new ArrayList<>();
         for (int key : arr) {
             map.put(key, map.getOrDefault(key, 0) + 1);
-            if (map.get(key) > arr.length / 3) {
-               list.add(key);
+        }
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > arr.length / 3) {
+                list.add(entry.getKey());
             }
         }
         return list;
@@ -21,7 +24,7 @@ public class MajorityNbythree {
 
 
     public static void main(String[] args) {
-        int arr[] = {11, 33, 33, 11, 33, 11};
+        int arr[] = {2,2};
         System.out.println(MajorityElement(arr));
     }
 }
