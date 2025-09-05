@@ -3,6 +3,9 @@ package ArrayPart3;
 import java.util.*;
 
 public class MajorityElement {
+
+    //Q Majority Element Appear more than N/2 Time
+
     //Brute Force Approch Tc-O(n) Sc-O(n)
     public static int MostOccurEle(int nums[], int n) {
         HashMap<Integer, Integer> map = new HashMap<>();
