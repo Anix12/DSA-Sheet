@@ -14,7 +14,7 @@ public class ReverseString {
             }
         }
         reverseString += reverseWord(word);
-        return reverseString;
+        return reverseString.trim();
     }
 
     public static String reverseWord(String word) {
