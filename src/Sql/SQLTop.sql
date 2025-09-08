@@ -166,4 +166,31 @@ Employee_Salary_Table
     Select FullName from Employee_Details_Table
     Order By FullName;
 
-31.
+31.Order Employee Names And Salary Based on Salary
+    Select FullName, Salary from Employee_Details_Table E, Employee_Salary_Table ES
+    Where E.EmpId = ES.EmpId
+    Order By ES.Salary;
+
+    //best
+    SELECT E.FullName, S.Salary
+    FROM Employee_Details_Table E
+    JOIN Employee_Salary_Table S ON E.EmpId = S.EmpId
+    ORDER BY S.Salary;
+
+33.Print Total Salary Going From Each project
+    Select Es.Project, Es.Salary from Employee_Salary_Table ES
+    Group by Es.Project;
+
+34.Print All Employee details Whose Joining Data is Not in Last YEAR
+    Select * from Employee_Details_Table
+    Where (DateOfJoining < current_Date - INTERVAL 1 year);
+
+35.Print All Employee Who gets Paid Above Average Salary
+    Select * from Employee_Details_Table E, Employee_Salary_Table ES
+    Where E.EmpId=ES.EmpId
+    and ES.salary > (Select avg(salary) from Employee_Salary_Table);
+
+    Select * from Employee_Details_Table E
+    Join Employee_Salary_Table ES
+    On E.EmpId = Es.EmpId
+    and ES.salary > (Select avg(salary) from Employee_Salary_Table);
