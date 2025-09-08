@@ -60,9 +60,110 @@ Employee_Salary_Table
     Select FullName from Employee_Details_Table
     where FullName Like '_a%';
 
-12.Write a sql query to fetch all Emp_id which present in either of the table - Employee_Details_Table and Employee_Salary_Table
+12.Write a Sql query to fetch all Emp_id which present in either of the table - Employee_Details_Table and Employee_Salary_Table
     select Emp_id from Employee_Details_Table
     Union
     select Emp_id from Employee_Salary_Table;
 
-13.
+13.Write a Sql query to fetch the EmpId that are present in both the table -Employee_Details_Table and Employee_Salary_Table
+    Select Emp_id from Employee_Details_Table
+    where EmpId In (select empId from Employee_Salary_Table)
+
+14.Write a Sql query that are Present in Employee_Details_Table but Not in Employee_Salary_Table
+    Select Emp_id from Employee_Details_Table
+    where EmpId Not In (select EmpId from Employee_Salary_Table)
+
+*15.Write a Sql query that fetch full name of all employee and Replace " " with -
+   Select REPLACE(FullName, ' ', '-') from Employee_Details_Table;
+
+*16.Write a Sql query EmpId and ManagerId togther
+    Select CONCAT(EmpID, ManagerId) as NewId
+    from Employee_Details_Table;
+
+*17.Write a sql query to fetch only the first name(String before Space )from the fullName colum from Employee_Details_Table
+    Select MID(FullName, 1, LOCATE('', FullName))
+    From Employee_Details_Table;
+
+18.Write a Sql Query which Upper Case the Employee FullName and LowerCase the City NAMES
+    Select UPPER(FullName), LOWER(City)
+    From Employee_Details_Table
+
+19.//21
+
+*20.Write a sql query in which the employee Name having salary Greater than or equal to 5000 and less than and equal to 10000
+    Select FullName from Employee_Details_Table
+    where EmpId In (
+    Select EmpId from Employee_Salary_Table
+    Where Salary between 5000 and 10000
+    );
+
+
+21(2).Write a sql query to fetch all the employee details from the EmployeeDetails table Who joined in year 2022
+    Select * from Employee_Details_Table
+    where YEAR(DateOfJoining) ='2022';
+
+**22.Write a sql query to fetch all employee records from the EmployeeDetails table who have a salary record in Employee_Salary_Table
+    Select * from Employee_Details_Table E
+    Where EXISTS (
+    Select * from Employee_Salary_Table S
+    where E.EmpId = s.EmpId
+    )
+
+**23.Write a Sql query to fetch all employee who are also manager from Employee_Details_Table
+    Select DISTINCT E.FullName
+    from Employee_Details_Table E
+    INNER Join
+    Employee_Details_Table M
+    On E.EmpId = M.MangerId;
+
+24.Write a Sql query to fetch records from Employee_Details_Table where ManagerId is Coming More than Once
+    Select * from Employee_Details_Table
+    Where ManagerId In (
+    Select ManagerId from Employee_Details_Table
+    Group By ManagerId
+    Having count(ManagerId)>1
+    );
+
+25.Write a Sql query to fetch only odd rows from the table
+    Select EmpId, Project, Salary
+    From (
+    Select *, ROW_NUMBER() OVER(Order By EmpId) as RowNumber
+    ) E
+    Where E.RowNumber % 2 = 1;
+
+   //If Question say find odd even based on any particular parameter like in this they sort based on EmpId
+    Select * from Employee_Salary_Table
+    Where MOD(EmpId, 2)=1;
+
+26.Write a Sql Query to fetch only Even Number From table
+    Select EmpId, Project, Salary
+    From (
+    Select *, ROW_NUMBER() OVER(Order By EmpId) as RowNumber
+    ) E
+    Where E.RowNumber % 2 = 0;
+
+   //If Question say find even based on any particular parameter
+    Select * from Employee_Salary_Table
+    Where MOD(EmpId, 2)=0;
+
+27. Write an Sql query to create a new table with data structure copied from another table
+    Create table NewTable
+    Select * from Employee_Details_Table;
+
+28.Write a Sql query to fetch Top 3 records from table //Top 3
+    Select * from Employee_Details_Table
+    Order By Salary DESC Limit 3;
+    //what if they ask lower 3
+
+29.Write Sql query to find the 3rd highest Salary from table
+    //with keyword
+    Select DISTINCT Salary
+    from Employee_Salary_Table
+    Order by Salary DESC
+    Limit 1 OFFSET 1; //Skip the first once and return 2
+
+30.Order Employee Names Based on Alphabetical Order
+    Select FullName from Employee_Details_Table
+    Order By FullName;
+
+31.
