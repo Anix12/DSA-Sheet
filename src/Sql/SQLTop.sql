@@ -55,3 +55,14 @@ Employee_Salary_Table
 10.Write a Sql query to display the total salary of each employee adding the salary with variable value
     Select EmpId, Salary+Variable as total_salary
     From Employee_Salary_Table;
+
+11.Write a Sql query to display the names of the employee where second letter of the name is a
+    Select FullName from Employee_Details_Table
+    where FullName Like '_a%';
+
+12.Write a sql query to fetch all Emp_id which present in either of the table - Employee_Details_Table and Employee_Salary_Table
+    select Emp_id from Employee_Details_Table
+    Union
+    select Emp_id from Employee_Salary_Table;
+
+13.
