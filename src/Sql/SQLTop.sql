@@ -194,3 +194,5 @@ Employee_Salary_Table
     Join Employee_Salary_Table ES
     On E.EmpId = Es.EmpId
     and ES.salary > (Select avg(salary) from Employee_Salary_Table);
+
+36.

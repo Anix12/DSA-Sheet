@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navbar</title>
+    <style>
+        .navbar {
+            width: 100%;
+            height: 60px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 35px;
+            width: 80px;
+        }
+
+        .navigation-link {
+            display: flex;
+        }
+
+        .navigation-link a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .searchBar input {
+            padding: 5px;
+        }
+
+        /* Mobile View: Hide navigation links and show hamburger */
+        .navigation-link {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+
+        /* For mobile */
+        @media screen and (max-width: 768px) {
+            .navigation-link.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                background-color: black;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="logo.jpeg" alt="logo image">
+    </div>
+    <div class="navigation-link">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+    </div>
+    <div class="searchBar">
+        <input type="text" placeholder="Search" >
+    </div>
+    <div class="hamburger" onclick="toggleNav()">
+        &#9776; <!-- Hamburger icon -->
+    </div>
+</header>
+
+<script>
+    function toggleNav() {
+        const navLinks = document.querySelector('.navigation-link');
+        navLinks.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
