@@ -1,0 +1,45 @@
+<!--//Button Press Form open Cancel Press or Outside Press form cancel -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Animal Gallary</title>
+    <style>
+        .thumbnail{
+           width:100px;
+           height:70px;
+        }
+        .image-display{
+            height:500px;
+            width:500px;
+        }
+        .image-display img{
+            height:100%;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img onClick="selectedImage('animal1.jpeg')" class="thumbnail" src="animal1.jpeg">
+    <img onClick="selectedImage('animal2.jpeg')" class="thumbnail" src="animal2.jpeg">
+    <img onClick="selectedImage('animal3.jpeg')" class="thumbnail" src="animal3.jpeg">
+</div>
+<div id="image-display" class="image-display">
+    <img src="">
+</div>
+
+
+<script>
+    const imageDisplay=document.getElementById('image-display')
+    const imageElement=document.querySelector('.image-display img');
+
+    imageDisplay.style.display="none";
+    function selectedImage(path) {
+        imageDisplay.style.display="block";
+        imageElement.src = path;
+    }
+</script>
+</body>
+</html>

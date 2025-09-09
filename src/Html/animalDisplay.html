@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Display</title>
+    <style>
+        .animal-button {
+            margin-right: 15px; /* Added gap of 15px between buttons */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+<h1>Interactive Animal Display</h1>
+<div class="container">
+    <button class="animal-button" id="puppy-btn">Puppy</button>
+    <button class="animal-button" id="kitten-btn">Kitten</button>
+</div>
+
+<img id="animal-image" src="" alt="Animal Image">
+<p id="animal-fact"></p>
+
+<script>
+    document.getElementById('puppy-btn').addEventListener('click', function() {
+    document.getElementById('animal-image').src = 'puppy.jpg'; // Update with the correct image path
+    document.getElementById('animal-fact').textContent = 'Puppies wag their tails when they are happy!';
+});
+
+document.getElementById('kitten-btn').addEventListener('click', function() {
+    document.getElementById('animal-image').src = 'kitten.jpg'; // Update with the correct image path
+    document.getElementById('animal-fact').textContent = 'Kittens use their whiskers to measure gaps!';
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!--//Button Press Form open Cancel Press or Outside Press form cancel -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+  .model{
+    display:none;
+    position: fixed;
+    top: 50px; left: 0; right: 0; bottom: 0;
+  }
+  .modal-content{
+    width: 50px;
+  }
+  label{
+    margin-top:10px;
+    margin-bottom: 5px;
+  }
+  .exit{
+    margin-left: 150px;
+    font-size: 25px;
+    color: red;
+  }
+  </style>
+</head>
+<body>
+  <button onclick="openform()">Open Contact Form</button>
+
+  <br><br>
+
+  <div class="model" id="model">
+    <div class="modal-content">
+      <span class="exit" id="exit" onclick="closeform()">x</span>
+      <form>
+        <label>Name:</label>
+        <input type="text" placeholder="text" required>
+        <br><br>
+        <label>Email:</label>
+        <input type="email">
+        <br><br>
+        <label>Message:</label>
+        <input type="text">
+        <br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const model=document.getElementById('model');
+    const modalContent = document.getElementById('modalContent');
+    const exit=document.getElementById('exit')
+    function openform(){
+      model.style.display="block";
+    }
+
+    function closeform(){
+      model.style.display="none";
+    }
+
+    model.addEventListener('click', function(event) {
+    if (event.target === model) {
+      closeform();
+    }
+  });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <style>
+        table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-bottom: 20px;
+    }
+
+    th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #0056b3;
+    }
+
+    button {
+    padding: 8px 16px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+
+    button:hover {
+    background-color: #004080;
+    }
+    </style>
+</head>
+<body>
+
+<h1>Shopping Cart</h1>
+<table border="1" id="itemsTable">
+    <thead>
+    <tr>
+        <th>Item</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Chips</td>
+        <td>
+            <button id="addToCartChips">Add to Cart</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Soda</td>
+        <td>
+            <button id="addToCartSoda">Add to Cart</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Cookies</td>
+        <td>
+            <button id="addToCartCookies">Add to Cart</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Shopping Cart</h2>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+    </tr>
+    <tr>
+        <td>Chips</td>
+        <td id="chipsQuantity">0</td>
+    </tr>
+    <tr>
+        <td>Soda</td>
+        <td id="sodaQuantity">0</td>
+    </tr>
+    <tr>
+        <td>Cookies</td>
+        <td id="cookiesQuantity">0</td>
+    </tr>
+</table>
+
+<script>
+    let chipsQuantity = 0;
+let sodaQuantity = 0;
+let cookiesQuantity = 0;
+
+const chipsQtyElement = document.getElementById('chipsQuantity');
+const sodaQtyElement = document.getElementById('sodaQuantity');
+const cookiesQtyElement = document.getElementById('cookiesQuantity');
+
+document.getElementById('addToCartChips').addEventListener('click', function () {
+    chipsQuantity++;
+    chipsQtyElement.textContent = chipsQuantity;
+});
+
+document.getElementById('addToCartSoda').addEventListener('click', function () {
+    sodaQuantity++;
+    sodaQtyElement.textContent = sodaQuantity;
+});
+
+document.getElementById('addToCartCookies').addEventListener('click', function () {
+    cookiesQuantity++;
+    cookiesQtyElement.textContent = cookiesQuantity;
+});
+
+</script>
+</body>
+</html>
