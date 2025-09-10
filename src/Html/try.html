@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+          height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="one">This is the first div</div>
+<div id="two">This is the second div</div>
+
+<button id="submit" onclick="changeFontColor()">Change Font color</button>
+
+<script>
+    function changeFontColor() {
+      document.getElementById("one").style.color = "#00FFFF";
+      document.getElementById("two").style.color = "#ADFF2F";
+    }
+</script>
+
+</body>
+</html>

@@ -84,6 +84,9 @@ Employee_Salary_Table
     Select MID(FullName, 1, LOCATE('', FullName))
     From Employee_Details_Table;
 
+    SELECT SUBSTRING_INDEX(FullName, ' ', 1) AS FirstName
+    FROM Employee_Details_Table;
+
 18.Write a Sql Query which Upper Case the Employee FullName and LowerCase the City NAMES
     Select UPPER(FullName), LOWER(City)
     From Employee_Details_Table
@@ -97,7 +100,7 @@ Employee_Salary_Table
     Where Salary between 5000 and 10000
     );
 
-
+-------------------------------------------------------------------------------------------------------------------------------
 21(2).Write a sql query to fetch all the employee details from the EmployeeDetails table Who joined in year 2022
     Select * from Employee_Details_Table
     where YEAR(DateOfJoining) ='2022';
@@ -195,4 +198,60 @@ Employee_Salary_Table
     On E.EmpId = Es.EmpId
     and ES.salary > (Select avg(salary) from Employee_Salary_Table);
 
-36.
+36.Print those Employee who are in Company More than 4 years
+    Select * from Employee_Details_Table
+    Where year(current_Date)-year(DateOfJoining)>4
+
+37.Print All Employee With total Number of years as service
+    Select *,(year(current_Date)-year(DateOfJoining)) as a service
+    From Employee_Details_Table
+
+38.Print Total Employee in Each Project
+    Select Project,
+           count(*) as TotalEmployees
+    From Employee_Salary_Table
+    Group by Project
+
+39.Return List of All Manager Order by total number of employee managed by them
+    Select ManagerId, count(*) as NumEmployee
+    From Employee_Details_Table
+    Group by ManagerId
+    Order By NumEmployee
+
+40.Return List of Employee who are serving more than 2 years and not in project p2 and p3
+    Select * from Employee_Salary_Table
+    where Project Not in ('p2', 'p3')
+    and
+    EmpId in
+    (Select EmpId from Employee_Details_Table
+    where year(current_Date)-year(DateOfJoining)>2
+    );
+
+41.Select Average Salary from each Project
+    Select AVG(Salary), Project
+    From Employee_Salary_Table
+    Group by Project;
+
+42.Add New Column Role in Employee_Details_Table
+    Alter Table Employee_Details_Table
+    Add role varchar(50);
+
+43.Update the Value of Role if Salary+Variable < 2000 then Analyst otherwise sr.Analyst
+    Update Employee_Details_Table E
+    inner Join Employee_Salary_Table ES on E.EmpID = ES.EmpId
+    set E.role=(
+    Case
+    When ES.salary + ES.Variable <2000
+    Then 'Analyst'
+    Else 'Sr Analyst'
+    END
+    )
+
+44.Produce the Output as Name(Role)
+    Select CONCAT(FullName,'(',role,')') As EmployeeWithRole
+    From Employee_Details_Table
+
+45.Display total Number of Character in Employee Name
+    select fullName, length(trim(FullName))-1 as NameLenght
+    From Employee_Details_Table
+
