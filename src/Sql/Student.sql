@@ -63,3 +63,21 @@ Q10. Display StudentId and total marks (Marks column only, assume Grade is bonus
 Select StudentId, Sum(Marks)
 from MarksTable
 Group BY StudentId;
+
+Q11. Display names of students where the second letter of the name is a.
+Select FullName from StudentTable
+Where FullName Like '_a%';
+
+Q12. Fetch all StudentIds which are present in either Students or Marks. ******
+Select StudentId from StudentTable
+UNION
+Select StudentId from MarksTable
+
+Q13. Fetch StudentIds that are present in both tables.
+Select StudentId from StudentTable
+Where StudentId In (Select StudentId from MarksTable)
+
+Q14. Fetch StudentIds that are present in Students but not in Marks.
+Select StudentId from StudentTable
+Where StudentId Not In (Select StudentId from MarksTable)
+
