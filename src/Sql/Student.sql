@@ -81,3 +81,22 @@ Q14. Fetch StudentIds that are present in Students but not in Marks.
 Select StudentId from StudentTable
 Where StudentId Not In (Select StudentId from MarksTable)
 
+Q15. Fetch FullName of students and replace " " with "-".
+Select REPLACE(FullName, ' ', '-') from StudentTable;
+
+Q16. Fetch StudentId and Department together (as single column). *******
+Select CONCAT(StudentId, Department) as StudentDepartment
+From StudentTable;
+
+Q17. Fetch only the first name (string before space) from FullName.
+Select SUBSTRING_INDEX(FullName ,' ', 1)
+From StudentTable;
+
+Q18. Uppercase student FullName and lowercase City.
+Select UPPER(FullName), LOWER(City)
+From StudentTable;
+
+Q20. Fetch names of students having marks between 60 and 90.
+SELECT FullName from StudentTable
+Where StudentId In (Select StudentId from MarksTable
+                    Where Marks BETWEEN 60 and 90)
