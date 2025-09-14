@@ -1,7 +1,7 @@
 package Cognizant;
 
 public class MaximumPermutationVal {
-
+    //5 and 6 Same
 
     public static int factorial(int n) {
         int fact = 1;
@@ -21,7 +21,7 @@ public class MaximumPermutationVal {
     }
 
     public static void main(String[] args) {
-        String str[] = {"eabccio"};
+        String str[] = {"eio"};
         System.out.println(maxPermutation(str));
 
     }
