@@ -81,8 +81,6 @@ Employee_Salary_Table
     from Employee_Details_Table;
 
 *17.Write a sql query to fetch only the first name(String before Space )from the fullName colum from Employee_Details_Table
-    Select MID(FullName, 1, LOCATE('', FullName))
-    From Employee_Details_Table;
 
     SELECT SUBSTRING_INDEX(FullName, ' ', 1) AS FirstName
     FROM Employee_Details_Table;
@@ -156,14 +154,14 @@ Employee_Salary_Table
 28.Write a Sql query to fetch Top 3 records from table //Top 3
     Select * from Employee_Details_Table
     Order By Salary DESC Limit 3;
-    //what if they ask lower 3
+    //what if they ask lower 3- make ASC
 
 29.Write Sql query to find the 3rd highest Salary from table
     //with keyword
     Select DISTINCT Salary
     from Employee_Salary_Table
     Order by Salary DESC
-    Limit 1 OFFSET 1; //Skip the first once and return 2
+    Limit 1 OFFSET 2; //Skip the first once and return 2
 
 30.Order Employee Names Based on Alphabetical Order
     Select FullName from Employee_Details_Table

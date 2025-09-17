@@ -2,7 +2,7 @@ package Cognizant;
 
 import java.util.Stack;
 
-public class PulseCount {
+public class PulseCountQ25 {
     //Pop The Element and Count their frequency in Stack
 
     public static int PulseCount(int arr[]) {
