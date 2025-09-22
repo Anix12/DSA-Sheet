@@ -1,6 +1,6 @@
 package OOPS;
 
-class Person {
+class Person  {
     void Walk() {
         System.out.println("Person Walking ");
     }
