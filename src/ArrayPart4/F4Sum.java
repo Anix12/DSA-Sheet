@@ -1,8 +1,6 @@
 package ArrayPart4;
 
 import java.util.*;
-import java.util.HashMap;
-import java.util.HashSet;
 
 public class F4Sum {
 
