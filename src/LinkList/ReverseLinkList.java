@@ -4,8 +4,7 @@ import java.util.LinkedList;
 
 public class ReverseLinkList {
 
-    // Define the Node class for the singly linked list
-    static class Node {
+    public static class Node {
         int data;
         Node next;
 
@@ -14,7 +13,6 @@ public class ReverseLinkList {
             this.next = null;
         }
     }
-
 
     public static Node reverseLinkedList(Node head) {
         Node prev = null;
@@ -41,7 +39,7 @@ public class ReverseLinkList {
 
         while (curr != null) {
             System.out.print(curr.data + "->");
-            curr=curr.next;
+            curr = curr.next;
         }
         System.out.println("null");
     }
