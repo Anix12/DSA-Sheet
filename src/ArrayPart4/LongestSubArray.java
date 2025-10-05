@@ -2,7 +2,7 @@ package ArrayPart4;
 
 import java.util.*;
 
-public class LongestSubArraySum {
+public class LongestSubArray {
 
 
     //Brute Force Approch
@@ -33,7 +33,7 @@ public class LongestSubArraySum {
     }
 
     public static void main(String[] args) {
-        int arr[] = {6, -2, 2, -8, 1, 7, 4, -10};
+        int arr[] = {9, -3, 3, -1, 6, -5};
         List<int[]> subarrays = SubarraySum(arr);
         for (int[] subarray : subarrays) {
             System.out.println(Arrays.toString(subarray));
