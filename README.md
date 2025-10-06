@@ -25,6 +25,8 @@ From **24th August 2025**, I’ve started solving **2 problems daily** from the 
  ┣ 📂 src  
  ┃ ┗ 📂 Arrays  
  ┃ ┗ 📂 String  
+ ┃ ┗ 📂 LinkedList  
+ ┃ ┗ 📂 Cognizant  
  ┗ 📜 README.md  
   
 Each folder contains problem solutions based on the sheet’s topic.
