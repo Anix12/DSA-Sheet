@@ -15,7 +15,7 @@ public class LinearSearch {
 
     public static void main(String[] args) {
         int arr[] = {10, 12, 14, 15, 16, 18, 19};
-        int key = 19;
+        int key = 20;
         System.out.println(isKeyPresent(arr, key));
     }
 }
