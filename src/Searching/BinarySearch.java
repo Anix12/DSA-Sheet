@@ -25,7 +25,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int arr[] = {10, 12, 14, 15, 16, 18, 20};
-        int key = 19;
+        int key = 20;
         System.out.println(isKeyFound(arr, key));
     }
 
