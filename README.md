@@ -23,13 +23,11 @@ From **24th August 2025**, I’ve started solving **2 problems daily** from the 
 ## 📂 Repository Structure    
 📦 Striver-DSA-Sheet  
  ┣ 📂 src  
- ┃ ┗ 📂 Arrays I,II,III,IV  
+ ┃ ┗ 📂 Arrays 
  ┃ ┗ 📂 String  
  ┃ ┗ 📂 LinkedList  
  ┃ ┗ 📂 Cognizant  
  ┃ ┗ 📂 Sorting  
- ┃ ┗ 📂 Searching  
- ┃ ┗ 📂 OOPS  
  ┗ 📜 README.md  
   
 Each folder contains problem solutions based on the sheet’s topic.
