@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Webpage - Event Handling</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin-top: 100px;
+          transition: background-color 0.5s;
+        }
+
+        input {
+          padding: 10px;
+          font-size: 16px;
+        }
+
+        h2 {
+          color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Welcome to My Dynamic Webpage</h2>
+<p>Hover over this text or focus on the input box to change background color.</p>
+
+<input type="text" id="nameBox" placeholder="Click here to focus">
+
+<script>
+    // Mouseover Event - Change background color when mouse hovers over paragraph
+    const paragraph = document.querySelector("p");
+    paragraph.addEventListener("mouseover", function() {
+      document.body.style.backgroundColor = "#b3e5fc"; // light blue
+    });
+
+    paragraph.addEventListener("mouseout", function() {
+      document.body.style.backgroundColor = "white"; // back to white
+    });
+
+    // Focus Event - Change background when input box is focused
+    const inputBox = document.getElementById("nameBox");
+    inputBox.addEventListener("focus", function() {
+      document.body.style.backgroundColor = "#c8e6c9"; // light green
+    });
+
+    inputBox.addEventListener("blur", function() {
+      document.body.style.backgroundColor = "white";
+    });
+</script>
+
+</body>
+</html>
