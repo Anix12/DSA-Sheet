@@ -1,4 +1,4 @@
-package ArrayPart3;
+package ArrayPart5;
 
 public class MaxConsecutiveOnes {
 
