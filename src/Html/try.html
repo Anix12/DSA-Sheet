@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        div {
-          height: 50px;
-        }
-    </style>
+    <title>Simple Countdown</title>
 </head>
 <body>
-
-<div id="one">This is the first div</div>
-<div id="two">This is the second div</div>
-
-<button id="submit" onclick="changeFontColor()">Change Font color</button>
-
 <script>
-    function changeFontColor() {
-      document.getElementById("one").style.color = "#00FFFF";
-      document.getElementById("two").style.color = "#ADFF2F";
-    }
-</script>
 
+
+    function union(setA, setB){
+    let unionSet=new Set(setA);
+    for(let ele of setB){
+        unionSet.add(ele);
+    }
+    return unionSet;
+    }
+
+    function intersection(setA, setB){
+    let intersectionSet=new Set();
+    for(ele of setA){
+      if(setB.has(ele)){
+      intersectionSet.add(ele);
+      }
+    }
+    return intersectionSet;
+    }
+    function difference(setA, setB){
+    let differenceSet=new Set(setA);
+    for(let ele of setB){
+        differenceSet.delete(ele);
+    }
+    return differenceSet;
+    }
+
+    const setA= new Set(['apple', 'banana' , 'cherry']);
+    const setB= new Set(['banana','date','fig']);
+
+    document.body.innerHTML+="After Doing union of Both Set will look like :"+[...union(setA, setB)].join(', ')+"<br>";
+    document.body.innerHTML+="After Doing intersection of Both Set will look like :"+[...intersection(setA, setB)].join(',')+"<br>";
+    document.body.innerHTML+="After Doing difference of Both Set will look like :"+[...difference(setA, setB)].join(',')+"<br>";
+
+</script>
 </body>
 </html>
