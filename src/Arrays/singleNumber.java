@@ -33,8 +33,17 @@ public class singleNumber {
         return -1;
     }
 
+    //This is the most optimal solution Tc-O(n) sc-O(1)
+    public static int oneTimeOccurOptimal(int arr[]){
+        int xor=0;
+        for(int i=0; i< arr.length; i++){
+            xor=xor^arr[i];
+        }
+        return xor;
+    }
+
     public static void main(String[] args) {
         int arr[] = {1, 2, 2, 1, 6, 6, 5, 8, 5};
-        System.out.println(oneTimeOccurElem(arr));
+        System.out.println(oneTimeOccurOptimal(arr));
     }
 }
