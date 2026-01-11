@@ -1,7 +1,7 @@
 package Arrays;
 import java.util.Arrays;
 public class MergeArray {
-    //Merge two Sorted Arrays Without Extra Space
+    //Merge two Sorted Arrays With Extra Space
     public static int[] mergeArrWithExtraSpace(int arr1[], int arr2[]) {
         int m = arr1.length;
         int n = arr2.length;
